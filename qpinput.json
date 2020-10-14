@@ -1,0 +1,398 @@
+{
+"simulation" : !note
+{
+    "nodes" : [32,2],
+    "indx" : 10,
+    "indy" : 10,
+    "indz" : 11,
+    "box" : {
+        "x" : [-3.7699,3.7699],
+        "y" : [-3.7699,3.7699],
+        "z" : [0,81.681]},
+    "boundary" : "conducting",
+    "n0" : 2.79e20,
+    "time" : 5000.1,
+    "dt" : 20.0,
+    "nbeams" : 11,
+    "nspecies" : 2,
+    "dump_restart" : false,
+    "ndump_restart" : 50,
+    "read_restart" : false,
+    "restart_timestep" : 1,
+    "iter" : 1,
+    "verbose" : 1
+},
+
+"beam" :
+[
+    {
+    "evolution" : true,
+    "profile" : 0,
+    "np" : [128,128,256],
+    "npmax" : 80000000,
+    "q" : -1.0,
+    "m" : 1.0,
+    "gamma" : 19569.548,
+    "peak_density" : 26.6,
+    "quiet_start" : true,
+    "center" : [0.0,0.0,6.2826],
+    "sigma" : [0.0408,0.0408,0.314128],
+    "sigma_v" : [3.8462,3.8462,0.0],
+    "centroid_x" : [0.0,0.0,0.0],
+    "centroid_y" : [0.0,0.0,0.0],
+    "diag" :
+    [
+        {
+        "name" : ["drive01"],
+        "ndump" : 10,
+        "slice" : [["xz", 513],["yz",513]]
+        },
+        {
+        "name" : ["raw"],
+        "ndump" : 50,
+        "sample" : 128
+        }
+    ]
+    },
+
+{
+    "evolution" : true,
+    "profile" : 0,
+    "np" : [128,128,256],
+    "npmax" : 80000000,
+    "q" : -1.0,
+    "m" : 1.0,
+    "gamma" : 19569.548,
+    "peak_density" : 26.6,
+    "quiet_start" : true,
+    "center" : [0.0,0.0,12.565],
+    "sigma" : [0.0408,0.0408,0.314128],
+    "sigma_v" : [3.8462,3.8462,0.0],
+    "centroid_x" : [0.0,0.0,0.0],
+    "centroid_y" : [0.0,0.0,0.0],
+    "diag" :
+    [
+        {
+        "name" : ["drive02"],
+        "ndump" : 10,
+        "slice" : [["xz", 513],["yz",513]]
+        },
+        {
+        "name" : ["raw"],
+        "ndump" : 50,
+        "sample" : 128
+        }
+    ]
+},
+{
+    "evolution" : true,
+    "profile" : 0,
+    "np" : [128,128,256],
+    "npmax" : 80000000,
+    "q" : -1.0,
+    "m" : 1.0,
+    "gamma" : 19569.548,
+    "peak_density" : 26.6,
+    "quiet_start" : true,
+    "center" : [0.0,0.0,18.848],
+    "sigma" : [0.0408,0.0408,0.314128],
+    "sigma_v" : [3.8462,3.8462,0.0],
+    "centroid_x" : [0.0,0.0,0.0],
+    "centroid_y" : [0.0,0.0,0.0],
+    "diag" :
+    [
+        {
+        "name" : ["drive03"],
+        "ndump" : 10,
+        "slice" : [["xz", 513],["yz",513]]
+        },
+        {
+        "name" : ["raw"],
+        "ndump" : 50,
+        "sample" : 128
+        }
+    ]
+    },
+{
+    "evolution" : true,
+    "profile" : 0,
+    "np" : [128,128,256],
+    "npmax" : 80000000,
+    "q" : -1.0,
+    "m" : 1.0,
+    "gamma" : 19569.548,
+    "peak_density" : 26.6,
+    "quiet_start" : true,
+    "center" : [0.0,0.0,25.130],
+    "sigma" : [0.0408,0.0408,0.314128],
+    "sigma_v" : [3.8462,3.8462,0.0],
+    "centroid_x" : [0.0,0.0,0.0],
+    "centroid_y" : [0.0,0.0,0.0],
+    "diag" :
+    [
+        {
+        "name" : ["drive04"],
+        "ndump" : 10,
+        "slice" : [["xz", 513],["yz",513]]
+        },
+        {
+        "name" : ["raw"],
+        "ndump" : 50,
+        "sample" : 128
+        }
+    ]
+    },
+ {
+    "evolution" : true,
+    "profile" : 0,
+    "np" : [128,128,256],
+    "npmax" : 80000000,
+    "q" : -1.0,
+    "m" : 1.0,
+    "gamma" : 19569.548,
+    "peak_density" : 26.6,
+    "quiet_start" : true,
+    "center" : [0.0,0.0,31.413],
+    "sigma" : [0.0408,0.0408,0.314128],
+    "sigma_v" : [3.8462,3.8462,0.0],
+    "centroid_x" : [0.0,0.0,0.0],
+    "centroid_y" : [0.0,0.0,0.0],
+    "diag" :
+    [
+        {
+        "name" : ["drive05"],
+        "ndump" : 10,
+        "slice" : [["xz", 513],["yz",513]]
+        },
+        {
+        "name" : ["raw"],
+        "ndump" : 50,
+        "sample" : 128
+        }
+    ]
+    },
+{
+    "evolution" : true,
+    "profile" : 0,
+    "np" : [128,128,256],
+    "npmax" : 80000000,
+    "q" : -1.0,
+    "m" : 1.0,
+    "gamma" : 19569.548,
+    "peak_density" : 26.6,
+    "quiet_start" : true,
+    "center" : [0.0,0.0,37.696],
+    "sigma" : [0.0408,0.0408,0.314128],
+    "sigma_v" : [3.8462,3.8462,0.0],
+    "centroid_x" : [0.0,0.0,0.0],
+    "centroid_y" : [0.0,0.0,0.0],
+    "diag" :
+    [
+        {
+        "name" : ["drive06"],
+        "ndump" : 10,
+        "slice" : [["xz", 513],["yz",513]]
+        },
+        {
+        "name" : ["raw"],
+        "ndump" : 50,
+        "sample" : 128
+        }
+    ]
+    },
+
+{
+    "evolution" : true,
+    "profile" : 0,
+    "np" : [128,128,256],
+    "npmax" : 80000000,
+    "q" : -1.0,
+    "m" : 1.0,
+    "gamma" : 19569.548,
+    "peak_density" : 26.6,
+    "quiet_start" : true,
+    "center" : [0.0,0.0,43.978],
+    "sigma" : [0.0408,0.0408,0.314128],
+    "sigma_v" : [3.8462,3.8462,0.0],
+    "centroid_x" : [0.0,0.0,0.0],
+    "centroid_y" : [0.0,0.0,0.0],
+    "diag" :
+    [
+        {
+        "name" : ["drive07"],
+        "ndump" : 10,
+        "slice" : [["xz", 513],["yz",513]]
+        },
+        {
+        "name" : ["raw"],
+        "ndump" : 50,
+        "sample" : 128
+        }
+    ]
+    },
+{
+    "evolution" : true,
+    "profile" : 0,
+    "np" : [128,128,256],
+    "npmax" : 80000000,
+    "q" : -1.0,
+    "m" : 1.0,
+    "gamma" : 19569.548,
+    "peak_density" : 26.6,
+    "quiet_start" : true,
+    "center" : [0.0,0.0,50.261],
+    "sigma" : [0.0408,0.0408,0.314128],
+    "sigma_v" : [3.8462,3.8462,0.0],
+    "centroid_x" : [0.0,0.0,0.0],
+    "centroid_y" : [0.0,0.0,0.0],
+    "diag" :
+    [
+        {
+        "name" : ["drive08"],
+        "ndump" : 10,
+        "slice" : [["xz", 513],["yz",513]]
+        },
+        {
+        "name" : ["raw"],
+        "ndump" : 50,
+        "sample" : 128
+        }
+    ]
+    },
+{
+    "evolution" : true,
+    "profile" : 0,
+    "np" : [128,128,256],
+    "npmax" : 80000000,
+    "q" : -1.0,
+    "m" : 1.0,
+    "gamma" : 19569.548,
+    "peak_density" : 26.6,
+    "quiet_start" : true,
+    "center" : [0.0,0.0,56.543],
+    "sigma" : [0.0408,0.0408,0.314128],
+    "sigma_v" : [3.8462,3.8462,0.0],
+    "centroid_x" : [0.0,0.0,0.0],
+    "centroid_y" : [0.0,0.0,0.0],
+    "diag" :
+    [
+        {
+        "name" : ["drive09"],
+        "ndump" : 10,
+        "slice" : [["xz", 513],["yz",513]]
+        },
+        {
+        "name" : ["raw"],
+        "ndump" : 50,
+        "sample" : 128
+        }
+    ]
+    },
+ {
+    "evolution" : true,
+    "profile" : 0,
+    "np" : [128,128,256],
+    "npmax" : 80000000,
+    "q" : -1.0,
+    "m" : 1.0,
+    "gamma" : 19569.548,
+    "peak_density" : 26.6,
+    "quiet_start" : true,
+    "center" : [0.0,0.0,62.826],
+    "sigma" : [0.0408,0.0408,0.314128],
+    "sigma_v" : [3.8462,3.8462,0.0],
+    "centroid_x" : [0.0,0.0,0.0],
+    "centroid_y" : [0.0,0.0,0.0],
+    "diag" :
+    [
+                {
+        "name" : ["drive10"],
+        "ndump" : 10,
+        "slice" : [["xz", 513],["yz",513]]
+        },
+        {
+        "name" : ["raw"],
+        "ndump" : 50,
+        "sample" : 128
+        }
+    ]
+    },
+{
+    "evolution" : true,
+    "profile" : 0,
+    "np" : [128,128,256],
+    "npmax" : 80000000,
+    "q" : -1.0,
+    "m" : 1.0,
+    "gamma" : 19569.548,
+    "peak_density" : 12.17,
+    "quiet_start" : true,
+    "center" : [0.0,0.0,67.230],
+    "sigma" : [0.0408,0.0408,0.314128],
+    "sigma_v" : [3.8462,3.8462,0.0],
+    "centroid_x" : [0.0,0.0,0.0],
+    "centroid_y" : [0.0,0.0,0.0],
+    "diag" :
+    [
+                {
+        "name" : ["witness"],
+        "ndump" : 10,
+        "slice" : [["xz", 513],["yz",513]]
+        },
+        {
+        "name" : ["raw"],
+        "ndump" : 50,
+        "sample" : 128
+        }
+    ]
+    }
+],
+"species" :
+[
+    {
+    "profile" : 0,
+    "ppc" : [2,2],
+    "q" : -1.0,
+    "m" : 1.0,
+    "density" : 1.0,
+    "longitudinal_profile" : "uniform",
+    "diag" :
+    [
+        {
+        "name" : ["p_electrons"],
+        "ndump" : 10,
+        "slice" : [["xz", 513],["yz",513]]
+        }
+    ]
+    },
+    {
+    "profile" : 0,
+    "ppc" : [2,2],
+    "q" : 1.0,
+    "m" : 1836.15,
+    "density" : 1.0,
+    "longitudinal_profile" : "uniform",
+    "diag" :
+    [
+        {
+        "name" : ["p_ions"],
+        "ndump" : 10,
+        "slice" : [["xz", 513],["yz",513]]
+        }
+    ]
+    }
+],
+
+"field" :
+{
+    "diag" :
+    [
+        {
+        "name" : ["ex","ey","ez"],
+        "ndump" : 10,
+        "slice" : [["xz", 513],["yz", 513]]
+        }
+    ]
+
+}
+}
