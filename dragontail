@@ -1,0 +1,201 @@
+simulation
+{
+n0 = 1.74d21,
+! lambda = 800nm
+! 1/w0 = 0.424fs
+! c/w0 = 127.2nm
+}
+!----------the node configuration for this simulation---------
+node_conf
+{
+node_number(1:3) = 16, 2, 2,
+if_periodic(1:3) = .false., .false., .false.,
+!n_threads = 8,
+}
+!----------spatial grid----------
+grid
+{
+nx_p(1:3) = 600, 600, 600,
+coordinates = "cartesian",
+}
+!----------time step and global data dump timestep number----------
+time_step
+{
+dt = 0.8164,
+ndump = 200,
+}
+!----------restart information----------
+restart
+{
+ndump_fac = 0,
+if_restart = .false.,
+if_remold = .true.,
+}
+!----------spatial limits of the simulations----------
+!(note that this includes information about
+! the motion of the simulation box)
+space
+{
+xmin(1:3) = -600.0 , -600.0, -600.0,
+xmax(1:3) = 0.0, 600.0, 600.0,
+if_move= .true., .false., .false.,
+}
+!----------time limits ----------
+time
+{
+tmin = 0.0,
+tmax = 10000.0,
+}
+!----------field solver set up-----------------
+el_mag_fld
+{
+solver = "yee",
+}
+!----------boundary conditions for em-fields ----------
+emf_bound
+{
+type(1:2,1) = "open", "open",
+type(1:2,2) = "open", "open",
+type(1:2,3) = "open", "open",
+}
+!----------diagnostic for electromagnetic fields----------
+diag_emf
+{
+ndump_fac = 1,
+ndump_fac_lineout = 1,
+reports = "e1,slice,x3,300","e2,slice,x3,300","e3,slice,x2,300","psi,slice,x3,300","b2,slice,x2,300","b3,slice,x3,300",
+"ext_e2,slice,x3,300","ext_e3,slice,x3,300","ext_b2,slice,x3,300","ext_b3,slice,x3,300",
+}
+!----------number of particle species----------
+particles
+{
+num_species = 1,
+num_neutral = 1,
+interpolation = "quadratic",
+}
+!----------configuration of the bunch----------
+species
+{
+name = "driver",
+!push_type = "standard",
+num_par_x(1:3) = 2, 2, 2,
+rqm = -1.0,
+num_par_max = 800000,
+free_stream = .false.,
+}
+udist
+{
+uth(1:3) = 0.0, 24.0, 24.0,
+ufl(1:3) = 19600.0, 0.0, 0.0,
+use_classical_uadd = .true.,
+n_accelerate = 500,
+}
+profile
+{
+density = 1.0d-4, !8e17
+profile_type(1:3) = "gaussian", "gaussian", "gaussian",
+gauss_center(1:3) = -235.8491, 0.0, 0.0,
+gauss_sigma(1:3) = 78.6164, 157.2327, 157.2327,
+gauss_range(1:2,1) = -471.6981, 0.0,
+gauss_range(1:2,2) = -471.6981, 471.6981, ! truncated length = 3 * sigma
+gauss_range(1:2,3) = -471.6981, 471.6981,
+den_min = 1.d-10,
+}
+spe_bound
+{
+type(1:2,1) = "open", "open",
+type(1:2,2) = "open", "open",
+type(1:2,3) = "open", "open",
+}
+diag_species
+{
+ndump_fac = 1,
+reports = "charge,slice,x3,300",
+ndump_fac_lineout = 1,
+!ndump_fac_raw = 1,
+raw_fraction = 0.1,
+}
+!----------configuration of the Xe ADK----------
+neutral
+{
+!model = "adk",
+name = "Xe-ADK",
+! current only xeon is available
+neutral_gas = "Xe",
+
+! density below this value is truncated
+den_min = 1.0d-10,
+
+multi_max = 1,
+multi_min = 0,
+
+}
+profile
+{
+density = 5.0d-5,
+profile_type(1:3) = "piecewise-linear", "uniform", "uniform",
+num_x = 5,
+x(1:5,1) = -1400.0, 0.0, 400.0, 2910.0, 33100.0,
+fx(1:5,1) = 0.0, 0.0, 1.0, 1.0, 1.0,
+den_min = 1.d-10,
+}
+diag_neutral
+{
+ndump_fac = 1,
+ndump_fac_lineout = 1,
+reports = "ion_charge,slice,x3,300",
+}
+species
+{
+name = "Xe-ADK-electrons",
+!push_type = "standard",
+num_par_max = 2000000,
+rqm=-1.0,
+num_par_x(1:3) = 1, 1, 1,
+!den_min = 1.d-10,
+!add_tag = .true.,
+}
+
+udist
+{
+uth(1:3) = 0.0, 0.0, 0.0,
+ufl(1:3) = 0.0, 0.0, 0.0,
+}
+spe_bound
+{
+type(1:2,1) = "open", "open",
+type(1:2,2) = "open", "open",
+type(1:2,3) = "open", "open",
+}
+diag_species
+{
+ndump_fac = 1,
+ndump_fac_lineout = 1,
+reports = "charge, slice,x3,300",
+!ndump_fac_raw = 1,
+!raw_fraction = 1,
+}
+zpulse
+{
+time = 10.0 
+type = "wall", !initializing outside we do not care about initial formation
+direction = 2, !along x_2
+a0 = 1.612, !E_1 = 1.59e11
+omega0 = 5.0,
+pol_type=0,
+propagation = "forward",
+lon_type = "gaussian", !short pulse
+lon_x0 = 20,
+lon_range = 25,
+lon_duration = 30,
+per_type = "gaussian",
+per_w0 = 4.705,
+per_focus= 0.0,0.0 !not sure
+per_center= 0.0,
+}
+current{}
+smooth
+{
+type(1) = "5pass",
+}
+! --------------------- end of osiris input file ---------------
